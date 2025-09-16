@@ -7,14 +7,15 @@ import Logo from "../assets/Fotos/ecotapeLogo.png"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecotape</title>
   </head>
-  <body>
-    <header class="w-full max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center p-6 gap-4">
-      <img src={Logo.src} alt="Ecotape Logo" class="w-40 md:w-48" />
-      <div class="flex flex-col md:flex-row gap-2 md:gap-10  rounded-md p-2 md:p-0">
-        <a href="#nosotros" class="px-2 py-1 ">Nosotros</a>
-        <a href="#productos" class=" px-2 py-1 ">Productos</a>
-        <a href="#contacto" class=" px-2 py-1 ">Contacto</a>
-      </div>
-    </header>
+  <body class="font-sans">
+<header class="w-full max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center p-4 md:p-6 gap-4">
+  <img src={Logo.src} alt="Ecotape Logo" class="w-32 md:w-40 lg:w-48" />
+  <nav class="flex flex-col md:flex-row gap-3 md:gap-8 text-center">
+    <a href="#nosotros" class="px-2 py-1 hover:text-green-700">Nosotros</a>
+    <a href="#productos" class="px-2 py-1 hover:text-green-700">Productos</a>
+    <a href="#contacto" class="px-2 py-1 hover:text-green-700">Contacto</a>
+  </nav>
+</header>
+
   </body>
 </html>
