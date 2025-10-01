@@ -5,6 +5,7 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Nosotros from "../components/QuienesSomos.astro"
 import Productos from "../components/Productos.js"
+import ProductosPreview from '../components/ProductosPreview';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,5 +14,6 @@ import Productos from "../components/Productos.js"
 	<Header />
 	<Nav />
 	<Nosotros />
-	<Productos/>
+	<ProductosPreview  client:load />
+	<!-- <Productos client:load />-->
 </Layout>
