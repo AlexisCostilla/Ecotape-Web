@@ -1,0 +1,241 @@
+---
+import FFoto from "../assets/Fotos/FotoEcoStock1.jpg";
+import FFoto2 from "../assets/Fotos/FotoEcoStock2.jpg";
+import FFoto3 from "../assets/Fotos/FotoEcoStock3.jpg";
+---
+
+<section class="bg-[#2B312B] w-11/12 md:w-7/12 m-auto rounded-3xl flex flex-col md:flex-row items-center justify-between p-10 md:p-16 gap-10 mt-10 opacity-0 animate-fadeIn">
+  <!-- Lado izquierdo: texto y buscador -->
+  <div class="w-full md:w-5/12 text-white flex flex-col gap-6 opacity-0 animate-slideUp" style="animation-delay: 0.2s">
+    <!-- Título -->
+    <h1 class="text-3xl md:text-5xl font-bold leading-snug -mt-6">
+      ¿Qué Tóner lleva mi impresora?
+    </h1>
+
+    <!-- Formulario -->
+    <form class="w-full max-w-md flex flex-col gap-4">
+      <label for="search" class="sr-only">Buscar productos</label>
+      <input
+        id="search"
+        type="text"
+        placeholder="Buscar por modelo de impresora..."
+        class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-green-400 outline-none bg-gray-100 text-gray-800 placeholder-gray-500 shadow-md"
+      />
+      <button
+        type="submit"
+        class="text-white bg-blue-400 font-semibold py-2 px-5 rounded-md transition-all duration-200 hover:bg-[#35566B]"
+      >
+        Buscar
+      </button>
+    </form>
+
+    <!-- Texto + botón de WhatsApp -->
+    <div class="flex flex-col gap-3 mt-4">
+      <p class="text-xl md:text-2xl">
+        Podés consultarnos vía <span class="text-green-400 font-semibold">WhatsApp</span>
+      </p>
+      <a
+        href="#"
+        class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-5 rounded-md transition-all duration-200 text-center w-fit"
+      >
+        Enviarnos un mensaje
+      </a>
+    </div>
+  </div>
+
+  <!-- Lado derecho: imagen grande -->
+  <article class="w-full md:w-7/12 flex justify-end opacity-0 animate-slideRight" style="animation-delay: 0.4s">
+    <img
+      src={FFoto.src}
+      alt="Impresora o tóner"
+      class="w-full max-w-lg md:max-w-3xl object-contain rounded-2xl"
+    />
+  </article>
+</section>
+
+<!-- Texto inferior -->
+<div class="rounded-lg p-6 w-11/12 max-w-7xl mx-auto mt-10 mb-10 bg-[#2B312B] opacity-0 animate-fadeIn" style="animation-delay: 0.6s">
+  <h2 class="text-white text-center text-lg md:text-xl">
+    En <span class="font-bold text-amber-300">Ecotape</span> trabajamos desde
+    hace años ofreciendo
+    <span class="font-bold text-amber-300">calidad</span>, atención
+    personalizada y
+    <span class="font-bold text-amber-300">soluciones rápidas</span> para tu impresora.
+  </h2>
+</div>
+
+<!-- Banner animado -->
+<div class="bg-white p-4 mx-auto text-center shadow-md overflow-hidden mb-10 opacity-0 animate-fadeIn" style="animation-delay: 0.8s"> 
+  <p id="animatedText" class="font-bold text-black text-lg transition-all duration-700 ease-in-out"> 
+    <span class="text-[#2E7D32]">+10 Años</span> trabajando en ofrecer el mejor servicio de venta y post venta. 
+  </p> 
+</div>
+
+<style>
+  /* Animación Fade In */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Animación Slide Up */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animación Slide Right */
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-slideRight {
+    animation: slideRight 0.8s ease-out forwards;
+  }
+
+  /* Animaciones del texto rotativo */
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .slide-enter-right {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .slide-enter-right-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.7s ease, opacity 0.7s ease;
+  }
+
+  .slide-exit {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .slide-exit-active {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.7s ease, opacity 0.7s ease;
+  }
+
+  .highlight {
+    color: #2E7D32;
+  }
+</style>
+
+ 
+<style> 
+  /* contenedor con overflow oculto */ 
+  .overflow-hidden { 
+    overflow: hidden; 
+  } 
+ 
+  /* animación de deslizamiento y opacidad */ 
+  .slide-enter { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  } 
+ 
+  .slide-enter-active { 
+    transform: translateX(0); 
+    opacity: 1; 
+    transition: transform 0.7s ease, opacity 0.7s ease; 
+  } 
+ 
+  .slide-exit { 
+    transform: translateX(0); 
+    opacity: 1; 
+  } 
+ 
+  .slide-exit-active { 
+    transform: translateX(-100%); 
+    opacity: 0; 
+    transition: transform 0.7s ease, opacity 0.7s ease; 
+  }
+
+  .slide-enter-right { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  } 
+  .slide-enter-right-active { 
+    transform: translateX(0); 
+    opacity: 1; 
+    transition: transform 0.7s ease, opacity 0.7s ease; 
+  } 
+  .slide-exit-right { 
+    transform: translateX(0); 
+    opacity: 1; 
+  } 
+  .slide-exit-right-active { 
+    transform: translateX(100%); 
+    opacity: 0; 
+    transition: transform 0.7s ease, opacity 0.7s ease; 
+  }
+
+  .highlight {
+    color: #2E7D32;
+  }
+</style> 
+ 
+<script> 
+  const textos = [ 
+    "<span class='highlight'>+10 Años</span> trabajando en ofrecer el <span class='highlight'>mejor servicio</span> de venta y post venta.", 
+    "Comprometidos con la <span class='highlight'>calidad</span> y la <span class='highlight'>satisfacción</span> de nuestros clientes.", 
+    "<span class='highlight'>Soluciones rápidas</span> y personalizadas para tu <span class='highlight'>impresora</span>." 
+  ]; 
+ 
+  let index = 0; 
+  const textElement = document.getElementById("animatedText"); 
+ 
+  function cambiarTexto() { 
+    if (!textElement) return; 
+    // Salida hacia la izquierda 
+    textElement.classList.remove("slide-enter-right", "slide-enter-right-active"); 
+    textElement.classList.add("slide-exit"); 
+    requestAnimationFrame(() => { 
+      textElement.classList.add("slide-exit-active"); 
+    }); 
+ 
+    setTimeout(() => { 
+      // Cambiar texto 
+      index = (index + 1) % textos.length; 
+      textElement.innerHTML = textos[index]; 
+ 
+      // Entrada desde la derecha 
+      textElement.className = 
+        "font-bold text-black text-lg slide-enter-right"; 
+      requestAnimationFrame(() => { 
+        textElement.classList.add("slide-enter-right-active"); 
+      }); 
+    }, 700); 
+  } 
+ 
+  setInterval(cambiarTexto, 3000); 
+</script>
