@@ -1,61 +1,24 @@
 ---
-import { Card } from "flowbite-react";
-import { useEffect, useState, type ReactNode } from "react";
-import Productos from "../components/Productos.tsx"
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import '../styles/global.css';
+import Filtrador from "../components/Filtrador";
 ---
-    <Layout>
-<Header />
-<section class="flex flex-col items-center p-4  w-full max-w-6xl justify-center mx-auto">
-  <!-- Buscador principal -->
-  <form class="w-full max-w-md mb-6">
-    <label for="search" class="sr-only">Buscar productos</label>
-    <input
-      id="search"
-      type="text"
-      placeholder="Buscar productos..."
-      class="border border-gray-300 p-2 w-full rounded-md focus:ring-2 focus:ring-green-400 outline-none bg-gray-100"
-    />
-  </form>
 
-  <!-- Filtros -->
-  <aside class="w-full max-w-5xl mb-4">
-    <h2 class="text-lg font-semibold text-white mb-2">Filtrar por:</h2>
-
-    <form class="flex flex-wrap gap-4">
-      <div>
-        <label for="categoria" class="block text-sm font-medium text-white">Categoría</label>
-        <select
-          id="categoria"
-          class="border border-gray-300 rounded-md p-2"
-        >
-          <option value="">Todas</option>
-          <option value="original">Original</option>
-          <option value="alternativo">Alternativo</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="marca" class="block text-sm font-medium text-white">Marca</label>
-        <select
-          id="marca"
-          class="border border-gray-300 rounded-md p-2"
-        >
-          <option value="">Todas</option>
-          <option value="HP">HP</option>
-          <option value="Samsung">Samsung</option>
-        </select>
-      </div>
+<Layout>
+  <Header />
+  <section class="flex flex-col items-center p-4 w-full max-w-6xl justify-center mx-auto">
+    <form class="w-full max-w-md mb-6">
+      <label for="search" class="sr-only">Buscar productos</label>
+      <input
+        id="search"
+        type="text"
+        placeholder="Buscar productos..."
+        class="border border-gray-300 p-2 w-full rounded-md focus:ring-2 focus:ring-green-400 outline-none bg-gray-100"
+      />
     </form>
-  </aside>
-
-  <!-- Resultados de productos -->
-  <section id="productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl">
-    <!-- tus cards acá -->
+    
+    <!-- ✅ Solo necesitas Filtrador, que ya incluye todo -->
+    <Filtrador client:load />
   </section>
-</section>
-
-<Productos client:load/>
-
+</Layout>
