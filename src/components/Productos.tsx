@@ -28,53 +28,74 @@ export default function Productos({ productos: productosProp }: Props) {
   const data = productosProp || productos;
 
   return (
-    <div className="flex justify-center items-center p-4 mt-10 bg-gradient-to-br">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+    <div className="min-h-screen bg-gradient-to-br ">
+      {/* Header Section */}
+      <div className="max-w-7xl mx-auto mb-12 text-center">
+        <h2 className="text-5xl font-black text-white mb-4 mt-8">
+          Nuestros <span className="text-green-500">Productos</span>
+        </h2>
+        <div className="w-32 h-1.5 bg-gradient-to-r from-green-500 to-green-400 mx-auto mb-6"></div>
+        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          Calidad y rendimiento para tu impresora
+        </p>
+      </div>
+
+      {/* Products Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {data.map((item) => (
           <div
             key={item.id_tonner}
-            className="group relative bg-gradient-to-br bg-gray-800  rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-700 hover:border-blue-500 hover:-translate-y-2"
+            className="group relative bg-white rounded-2xl shadow-2xl transition-all duration-500 overflow-hidden border-2 border-gray-100 hover:-translate-y-3"
           >
-            {/* Badge de categoría flotante */}
-            <div className="absolute top-4 right-4 z-10">
-              <span className="px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 rounded-full shadow-lg backdrop-blur-sm">
+            {/* Verde Banfield stripe superior */}
+            <div className="absolute top-0 left-0 right-0 h-2 "></div>
+
+            {/* Badge de categoría */}
+            <div className="absolute top-6 right-4 z-10">
+              <span className="px-4 py-2 text-xs font-black text-black bg-amber-400 rounded-full shadow-xl backdrop-blur-sm uppercase tracking-wider">
                 {item.categoria}
               </span>
             </div>
 
-            {/* Contenedor de imagen con efectos */}
-            <div className="relative w-full h-56 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800">
-              {/* Efecto de brillo en hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 group-hover:opacity-10 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"></div>
+            {/* Contenedor de imagen */}
+            <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+              {/* Efecto diagonal verde en hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 via-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              {/* Círculos decorativos */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-green-500/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-green-500/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
               
               <img
                 src={item.img || "https://via.placeholder.com/300x300?text=Sin+Imagen"}
                 alt={item.modelo}
-                className="w-full h-full object-contain p-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-2"
+                className="w-full h-full object-contain p-8 transition-all duration-700 group-hover:scale-110"
               />
             </div>
 
-            {/* Contenido de la tarjeta */}
-            <div className="p-5 flex flex-col space-y-3">
-              <h5 className="text-lg md:text-xl font-bold text-white line-clamp-2 group-hover:text-blue-400 transition-colors duration-300">
+            {/* Contenido */}
+            <div className="p-6 flex flex-col space-y-4 bg-white">
+              <h5 className="text-xl font-bold text-gray-900 line-clamp-2 transition-colors duration-300 min-h-[3.5rem]">
                 {item.modelo}
               </h5>
 
-              <p className="text-sm text-slate-400 line-clamp-3 leading-relaxed">
+              <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed min-h-[4.5rem]">
                 {item.descripcion}
               </p>
 
-              {/* Botón de acción */}
-              <button className="mt-4 w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-lg shadow-lg hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95">
+              {/* Botón CTA */}
+              <button className="mt-4 w-full py-4 px-6 bg-gradient-to-r bg-[#00563F] text-white font-bold rounded-xl shadow-lg hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95 uppercase tracking-wide text-sm">
                 Ver Detalles
               </button>
             </div>
 
-            {/* Línea decorativa inferior */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            {/* Efecto de brillo animado */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-1000 translate-x-[-100%] group-hover:translate-x-[100%] pointer-events-none"></div>
           </div>
         ))}
       </div>
+
+  
     </div>
   );
 }

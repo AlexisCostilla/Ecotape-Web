@@ -4,238 +4,190 @@ import FFoto2 from "../assets/Fotos/FotoEcoStock2.jpg";
 import FFoto3 from "../assets/Fotos/FotoEcoStock3.jpg";
 ---
 
-<section class="bg-gray-800 w-11/12 md:w-7/12 m-auto rounded-3xl flex flex-col md:flex-row items-center justify-between p-10 md:p-16 gap-10 mt-10 opacity-0 animate-fadeIn">
-  <!-- Lado izquierdo: texto y buscador -->
-  <div class="w-full md:w-5/12 text-white flex flex-col gap-6 opacity-0 animate-slideUp" style="animation-delay: 0.2s">
-    <!-- Título -->
-    <h1 class="text-3xl md:text-5xl font-bold leading-snug -mt-6">
-      ¿Qué Tóner lleva mi impresora?
-    </h1>
+ <section class="relative bg-white w-11/12 md:w-9/12 m-auto rounded-3xl flex flex-col md:flex-row items-center justify-between p-10 md:p-16 gap-10 mt-10 overflow-hidden shadow-2xl opacity-0 animate-fadeIn">
 
-    <!-- Formulario -->
-    <form class="w-full max-w-md flex flex-col gap-4">
-      <label for="search" class="sr-only">Buscar productos</label>
-      <input
-        id="search"
-        type="text"
-        placeholder="Buscar por modelo de impresora..."
-        class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-green-400 outline-none bg-gray-100 text-gray-800 placeholder-gray-500 shadow-md"
-      />
-      <button
-        type="submit"
-        class="text-white bg-gray-800 font-semibold py-2 px-5 rounded-md transition-all duration-200 hover:bg-gray-700"
-      >
-        Buscar
-      </button>
-    </form>
+    <!-- Lado izquierdo: texto y buscador -->
+    <div class="w-full md:w-5/12 flex flex-col gap-6 opacity-0 animate-slideUp relative z-10" style="animation-delay: 0.2s">
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight text-banfield-green">
+        ¿Qué Tóner lleva mi impresora?
+      </h1>
 
-    <!-- Texto + botón de WhatsApp -->
-    <div class="flex flex-col gap-3 mt-4">
-      <p class="text-xl md:text-2xl">
-        Podés consultarnos vía <span class="text-green-400 font-semibold">WhatsApp</span>
+      <form class="w-full max-w-md flex flex-col gap-4">
+        <label for="search" class="sr-only">Buscar productos</label>
+        <input
+          id="search"
+          type="text"
+          placeholder="Buscar por modelo de impresora..."
+          class="border-2 border-banfield-green p-3 w-full rounded-lg focus:ring-4 focus:ring-green-200 outline-none bg-white text-gray-800 placeholder-gray-500 shadow-md"
+        />
+        <button
+          type="submit"
+          class="bg-banfield-green hover:bg-banfield-light-green text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+        >
+          Buscar
+        </button>
+      </form>
+
+      <!-- WhatsApp - visible solo en desktop -->
+      <div class="hidden md:flex flex-col gap-3 mt-4">
+        <p class="text-xl md:text-2xl text-gray-700">
+          Consultanos vía <span class="text-banfield-light-green font-bold">WhatsApp</span>
+        </p>
+        
+        <a 
+          href="#"
+          class="bg-banfield-light-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center w-fit shadow-lg hover:shadow-xl hover:scale-105"
+        >
+          📱 Enviarnos un mensaje
+        </a>
+      </div>
+    </div>
+
+    <!-- Lado derecho: imagen -->
+    <article class="w-full md:w-7/12 flex justify-end opacity-0 animate-slideRight relative z-10" style="animation-delay: 0.4s">
+      <div class="w-full max-w-lg md:max-w-2xl bg-gradient-to-br from-green-50 to-green-800 rounded-2xl p-8 shadow-xl">
+        <img src={FFoto.src} alt="Impresora o tóner" class="w-full h-auto object-contain">
+      </div>
+    </article>
+
+    <!-- WhatsApp - visible solo en mobile, debajo de la imagen -->
+    <div class="flex md:hidden flex-col gap-3 w-full opacity-0 animate-fadeIn" style="animation-delay: 0.6s">
+      <p class="text-xl text-gray-700 text-center">
+        Consultanos vía <span class="text-banfield-light-green font-bold">WhatsApp</span>
       </p>
-      <a
-        href="#"
-        class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-5 rounded-md transition-all duration-200 text-center w-fit"
+      <a 
+        href="https://wa.me/+541123290135"
+        class="bg-banfield-light-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:scale-105"
       >
-        Enviarnos un mensaje
+        📱 Enviarnos un mensaje
       </a>
     </div>
+  </section>
+
+  <!-- TEXTO INFERIOR CON ANIMACIÓN -->
+  <div class="rounded-2xl p-8 w-11/12 max-w-7xl mx-auto mt-10 mb-10 bg-banfield-green  shadow-xl opacity-0 animate-fadeIn" style="animation-delay: 0.6s">
+    <h2 class="text-white text-center text-lg md:text-2xl font-medium leading-relaxed">
+      En <span class="font-bold text-yellow-400">Ecotape</span> trabajamos desde hace años ofreciendo
+      <span class="font-bold text-yellow-400">calidad</span>, atención personalizada y
+      <span class="font-bold text-yellow-400">soluciones rápidas</span> para tu impresora.
+    </h2>
   </div>
 
-  <!-- Lado derecho: imagen grande -->
-  <article class="w-full md:w-7/12 flex justify-end opacity-0 animate-slideRight" style="animation-delay: 0.4s">
-    <img
-      src={FFoto.src}
-      alt="Impresora o tóner"
-      class="w-full max-w-lg md:max-w-3xl object-contain rounded-2xl"
-    />
-  </article>
-</section>
+  <!-- BANNER ANIMADO -->
+  <div class="bg-white border-t-4 border-b-4 border-banfield-green p-6 mx-auto text-center shadow-lg overflow-hidden mb-10 opacity-0 animate-fadeIn" style="animation-delay: 0.8s">
+    <p id="animatedText" class="font-bold text-banfield-green text-xl md:text-2xl transition-all duration-700 ease-in-out">
+      <span class="text-yellow-500 text-3xl">+10 Años</span> trabajando en ofrecer el mejor servicio de venta y post venta.
+    </p>
+  </div>
 
-<!-- Texto inferior -->
-<div class="rounded-lg p-6 w-11/12 max-w-7xl mx-auto mt-10 mb-10 bg-gray-800 opacity-0 animate-fadeIn" style="animation-delay: 0.6s">
-  <h2 class="text-white text-center text-lg md:text-xl">
-    En <span class="font-bold text-amber-300">Ecotape</span> trabajamos desde
-    hace años ofreciendo
-    <span class="font-bold text-amber-300">calidad</span>, atención
-    personalizada y
-    <span class="font-bold text-amber-300">soluciones rápidas</span> para tu impresora.
-  </h2>
-</div>
+  <!-- SECCIÓN NOSOTROS -->
 
-<!-- Banner animado -->
-<div class="bg-white p-4 mx-auto text-center shadow-md overflow-hidden mb-10 opacity-0 animate-fadeIn" style="animation-delay: 0.8s"> 
-  <p id="animatedText" class="font-bold text-black text-lg transition-all duration-700 ease-in-out"> 
-    <span class="text-[#2E7D32]">+10 Años</span> trabajando en ofrecer el mejor servicio de venta y post venta. 
-  </p> 
-</div>
-
-<style>
-  /* Animación Fade In */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    to {
-      opacity: 1;
+
+      </style>
+
+
+  <style>
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-  }
-
-  /* Animación Slide Up */
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+    
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
-  }
 
-  /* Animación Slide Right */
-  @keyframes slideRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
+    @keyframes slideText {
+      0%, 30% { transform: translateX(0); opacity: 1; }
+      35%, 65% { transform: translateX(-100%); opacity: 0; }
+      70%, 100% { transform: translateX(0); opacity: 1; }
     }
-    to {
-      opacity: 1;
-      transform: translateX(0);
+    
+    .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+    .animate-slideUp { animation: slideUp 0.8s ease-out forwards; }
+    .animate-slideRight { animation: slideRight 0.8s ease-out forwards; }
+    .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    
+    .opacity-0 { opacity: 0; }
+    
+    /* Colores Banfield */
+    .bg-banfield-green { background-color: #00563F; }
+    .bg-banfield-light-green { background-color: #00A859; }
+    .text-banfield-green { color: #00563F; }
+    .text-banfield-light-green { color: #00A859; }
+    .border-banfield-green { border-color: #00563F; }
+    
+    /* Gradiente Banfield */
+    .bg-banfield-gradient {
+      background: linear-gradient(135deg, #00563F 0%, #00A859 100%);
     }
-  }
+    
+    .hover-banfield:hover {
+      background-color: #00A859;
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-
-  .animate-slideUp {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-
-  .animate-slideRight {
-    animation: slideRight 0.8s ease-out forwards;
-  }
-
-  /* Animaciones del texto rotativo */
-  .overflow-hidden {
-    overflow: hidden;
-  }
-
-  .slide-enter-right {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  .slide-enter-right-active {
-    transform: translateX(0);
-    opacity: 1;
-    transition: transform 0.7s ease, opacity 0.7s ease;
-  }
-
-  .slide-exit {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  .slide-exit-active {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.7s ease, opacity 0.7s ease;
-  }
-
-  .highlight {
-    color: #2E7D32;
-  }
-</style>
-
+    /* Patrón de rayas verde */
+    .stripes-pattern {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #00563F,
+        #00563F 20px,
+        #00A859 20px,
+        #00A859 40px
+      );
+      opacity: 0.1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  </style>
  
-<style> 
-  /* contenedor con overflow oculto */ 
-  .overflow-hidden { 
-    overflow: hidden; 
-  } 
- 
-  /* animación de deslizamiento y opacidad */ 
-  .slide-enter { 
-    transform: translateX(100%); 
-    opacity: 0; 
-  } 
- 
-  .slide-enter-active { 
-    transform: translateX(0); 
-    opacity: 1; 
-    transition: transform 0.7s ease, opacity 0.7s ease; 
-  } 
- 
-  .slide-exit { 
-    transform: translateX(0); 
-    opacity: 1; 
-  } 
- 
-  .slide-exit-active { 
-    transform: translateX(-100%); 
-    opacity: 0; 
-    transition: transform 0.7s ease, opacity 0.7s ease; 
-  }
+ <script>
+    // Animación de texto rotativo
+    const textos = [
+      "<span class='text-yellow-400 text-3xl'>+10 Años</span> trabajando en ofrecer el mejor servicio de venta y post venta.",
+      "Comprometidos con la <span class='text-yellow-400'>calidad</span> y la <span class='text-yellow-400'>satisfacción</span> de nuestros clientes.",
+      "<span class='text-yellow-400'>Soluciones rápidas</span> y personalizadas para tu <span class='text-yellow-400'>impresora</span>."
+    ];
 
-  .slide-enter-right { 
-    transform: translateX(100%); 
-    opacity: 0; 
-  } 
-  .slide-enter-right-active { 
-    transform: translateX(0); 
-    opacity: 1; 
-    transition: transform 0.7s ease, opacity 0.7s ease; 
-  } 
-  .slide-exit-right { 
-    transform: translateX(0); 
-    opacity: 1; 
-  } 
-  .slide-exit-right-active { 
-    transform: translateX(100%); 
-    opacity: 0; 
-    transition: transform 0.7s ease, opacity 0.7s ease; 
-  }
+    let index = 0;
+    const textElement = document.getElementById("animatedText");
 
-  .highlight {
-    color: #2E7D32;
-  }
-</style> 
- 
-<script> 
-  const textos = [ 
-    "<span class='highlight'>+10 Años</span> trabajando en ofrecer el <span class='highlight'>mejor servicio</span> de venta y post venta.", 
-    "Comprometidos con la <span class='highlight'>calidad</span> y la <span class='highlight'>satisfacción</span> de nuestros clientes.", 
-    "<span class='highlight'>Soluciones rápidas</span> y personalizadas para tu <span class='highlight'>impresora</span>." 
-  ]; 
- 
-  let index = 0; 
-  const textElement = document.getElementById("animatedText"); 
- 
-  function cambiarTexto() { 
-    if (!textElement) return; 
-    // Salida hacia la izquierda 
-    textElement.classList.remove("slide-enter-right", "slide-enter-right-active"); 
-    textElement.classList.add("slide-exit"); 
-    requestAnimationFrame(() => { 
-      textElement.classList.add("slide-exit-active"); 
-    }); 
- 
-    setTimeout(() => { 
-      // Cambiar texto 
-      index = (index + 1) % textos.length; 
-      textElement.innerHTML = textos[index]; 
- 
-      // Entrada desde la derecha 
-      textElement.className = 
-        "font-bold text-black text-lg slide-enter-right"; 
-      requestAnimationFrame(() => { 
-        textElement.classList.add("slide-enter-right-active"); 
-      }); 
-    }, 700); 
-  } 
- 
-  setInterval(cambiarTexto, 3000); 
-</script>
+    function cambiarTexto() {
+      if (!textElement) return;
+      
+      textElement.style.opacity = '0';
+      textElement.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        index = (index + 1) % textos.length;
+        textElement.innerHTML = textos[index];
+        textElement.style.opacity = '1';
+        textElement.style.transform = 'translateY(0)';
+      }, 500);
+    }
+
+    setInterval(cambiarTexto, 4000);
+  </script>

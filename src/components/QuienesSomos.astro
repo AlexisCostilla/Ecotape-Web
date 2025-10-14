@@ -1,221 +1,236 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Animaciones con CSS puro */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+<style>
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
+    
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
     @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    /* Elementos inicialmente ocultos */
-    .animate-on-scroll {
-      opacity: 0;
+    @keyframes slideText {
+      0%, 30% { transform: translateX(0); opacity: 1; }
+      35%, 65% { transform: translateX(-100%); opacity: 0; }
+      70%, 100% { transform: translateX(0); opacity: 1; }
     }
-
-    /* Clases de animación */
-    .animate-fadeInUp {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .animate-fadeIn {
-      animation: fadeIn 0.8s ease-out forwards;
-    }
-
-    .animate-scaleIn {
-      animation: scaleIn 0.6s ease-out forwards;
-    }
-
-    /* Delays */
+    
+    .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+    .animate-slideUp { animation: slideUp 0.8s ease-out forwards; }
+    .animate-slideRight { animation: slideRight 0.8s ease-out forwards; }
+    .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; }
+    
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
     .delay-500 { animation-delay: 0.5s; }
     .delay-600 { animation-delay: 0.6s; }
+    
+    .opacity-0 { opacity: 0; }
+    
+    /* Colores Banfield */
+    .bg-banfield-green { background-color: #00563F; }
+    .bg-banfield-light-green { background-color: #00A859; }
+    .text-banfield-green { color: #00563F; }
+    .text-banfield-light-green { color: #00A859; }
+    .border-banfield-green { border-color: #00563F; }
+    
+    /* Gradiente Banfield */
+    .bg-banfield-gradient {
+      background: linear-gradient(135deg, #00563F 0%, #00A859 100%);
+    }
+    
+    .hover-banfield:hover {
+      background-color: #00A859;
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    /* Patrón de rayas verde */
+    .stripes-pattern {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #00563F,
+        #00563F 20px,
+        #00A859 20px,
+        #00A859 40px
+      );
+      opacity: 0.1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
   </style>
+
 </head>
 <body class="bg-gray-50">
-
-<section class="w-full py-16 px-4">
-  <div class="max-w-6xl mx-auto">
-    
-    <!-- Header -->
-    <div class="text-center mb-16 animate-on-scroll" data-animation="fadeInUp">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-        Sobre <span class="text-white">Ecotape</span>
-      </h2>
-      <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-      <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-        Somos tu aliado confiable en soluciones de impresión. Con más de una década 
-        de experiencia, ofrecemos productos de calidad y servicio técnico especializado 
-        para mantener tu negocio siempre en funcionamiento.
-      </p>
-    </div>
-
-    <!-- Stats Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-      <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow duration-300 animate-on-scroll delay-100" data-animation="scaleIn">
-        <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">+10</div>
-        <div class="text-gray-600 font-medium">Años de Experiencia</div>
-      </div>
+    <section id="nosotros" class="w-full py-4 px-4 bg-gray-50 mb-16 ">
+    <div class="max-w-6xl mx-auto">
       
-      <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow duration-300 animate-on-scroll delay-200" data-animation="scaleIn">
-        <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">500+</div>
-        <div class="text-gray-600 font-medium">Clientes Satisfechos</div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow duration-300 animate-on-scroll delay-300" data-animation="scaleIn">
-        <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">24/7</div>
-        <div class="text-gray-600 font-medium">Soporte Disponible</div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow duration-300 animate-on-scroll delay-400" data-animation="scaleIn">
-        <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">100%</div>
-        <div class="text-gray-600 font-medium">Compromiso</div>
-      </div>
-    </div>
-
-    <!-- Features Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-      
-      <!-- Feature 1 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-100" data-animation="fadeInUp">
-        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-3">Toners de Calidad</h3>
-        <p class="text-gray-600 leading-relaxed">Amplio stock de toners originales y compatibles para todas las marcas</p>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-200" data-animation="fadeInUp">
-        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-3">Servicio Técnico</h3>
-        <p class="text-gray-600 leading-relaxed">Reparación y mantenimiento especializado de impresoras</p>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-300" data-animation="fadeInUp">
-        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-3">Garantía</h3>
-        <p class="text-gray-600 leading-relaxed">Respaldo total en todos nuestros productos y servicios</p>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-400" data-animation="fadeInUp">
-        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-3">Atención Rápida</h3>
-        <p class="text-gray-600 leading-relaxed">Respuesta inmediata a tus consultas y necesidades</p>
-      </div>
-
-    </div>
-
-    <!-- Mission & Values -->
-    <div class="grid md:grid-cols-2 gap-8 mb-16">
-      
-      <!-- Mission -->
-      <div class="bg-gray-800 p-8 rounded-xl text-white animate-on-scroll delay-100" data-animation="fadeInUp">
-        <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
-          </svg>
-          <h3 class="text-2xl font-bold">Nuestra Misión</h3>
-        </div>
-        <p class="text-green-50 leading-relaxed">
-          Proporcionar soluciones de impresión confiables y accesibles, 
-          acompañando a nuestros clientes con productos de calidad y un 
-          servicio técnico excepcional que garantice la continuidad de sus operaciones.
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-banfield-green mb-4">
+          Sobre <span class="text-banfield-light-green">Ecotape</span>
+        </h2>
+        <div class="w-32 h-2 bg-banfield-gradient mx-auto mb-6 rounded-full"></div>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Somos tu aliado confiable en soluciones de impresión. Con más de una década 
+          de experiencia, ofrecemos productos de calidad y servicio técnico especializado 
+          para mantener tu negocio siempre en funcionamiento.
         </p>
       </div>
-
-      <!-- Values -->
-      <div class="bg-gray-800 p-8 rounded-xl text-white animate-on-scroll delay-200" data-animation="fadeInUp">
-        <div class="flex items-center mb-4">
-          <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-          </svg>
-          <h3 class="text-2xl font-bold">Nuestros Valores</h3>
+    </div>
+  </section>
+ <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 w-9/12 mx-auto">
+        <div class="bg-white border-2 border-banfield-green p-6 rounded-xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="text-5xl font-bold text-banfield-light-green mb-2">+10</div>
+          <div class="text-gray-700 font-semibold">Años de Experiencia</div>
         </div>
-        <ul class="space-y-3 text-gray-300">
-          <li class="flex items-start">
-            <span class="text-green-400 mr-2 font-bold">✓</span>
-            <span>Compromiso con la satisfacción del cliente</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-400 mr-2 font-bold">✓</span>
-            <span>Calidad garantizada en cada producto</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-400 mr-2 font-bold">✓</span>
-            <span>Transparencia y honestidad en nuestro servicio</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-400 mr-2 font-bold">✓</span>
-            <span>Innovación constante y mejora continua</span>
-          </li>
-        </ul>
+        
+        <div class="bg-white border-2 border-banfield-green p-6 rounded-xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="text-5xl font-bold text-banfield-light-green mb-2">500+</div>
+          <div class="text-gray-700 font-semibold">Clientes Satisfechos</div>
+        </div>
+        
+        <div class="bg-white border-2 border-banfield-green p-6 rounded-xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="text-5xl font-bold text-banfield-light-green mb-2">24/7</div>
+          <div class="text-gray-700 font-semibold">Soporte Disponible</div>
+        </div>
+        
+        <div class="bg-white border-2 border-banfield-green p-6 rounded-xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="text-5xl font-bold text-banfield-light-green mb-2">100%</div>
+          <div class="text-gray-700 font-semibold">Compromiso</div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 w-11/12 mx-auto">
+        
+        <div class="bg-white border-l-4 border-banfield-green p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-banfield-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-banfield-green mb-3">Toners de Calidad</h3>
+          <p class="text-gray-600 leading-relaxed">Amplio stock de toners originales y compatibles para todas las marcas</p>
+        </div>
+
+        <div class="bg-white border-l-4 border-banfield-green p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-banfield-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-banfield-green mb-3">Servicio Técnico</h3>
+          <p class="text-gray-600 leading-relaxed">Reparación y mantenimiento especializado de impresoras</p>
+        </div>
+
+        <div class="bg-white border-l-4 border-banfield-green p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-banfield-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-banfield-green mb-3">Garantía</h3>
+          <p class="text-gray-600 leading-relaxed">Respaldo total en todos nuestros productos y servicios</p>
+        </div>
+
+        <div class="bg-white border-l-4 border-banfield-green p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-banfield-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-banfield-green mb-3">Atención Rápida</h3>
+          <p class="text-gray-600 leading-relaxed">Respuesta inmediata a tus consultas y necesidades</p>
+        </div>
+
+      </div>
+
+      <!-- Mission & Values -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16 w-10/12 mx-auto">
+        
+        <div class="bg-banfield-gradient p-8 rounded-xl text-white shadow-xl relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-center mb-4">
+              <svg class="w-10 h-10 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+              </svg>
+              <h3 class="text-2xl font-bold">Nuestra Misión</h3>
+            </div>
+            <p class="text-green-50 leading-relaxed text-lg">
+              Proporcionar soluciones de impresión confiables y accesibles, 
+              acompañando a nuestros clientes con productos de calidad y un 
+              servicio técnico excepcional que garantice la continuidad de sus operaciones.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-banfield-green p-8 rounded-xl shadow-xl">
+          <div class="flex items-center mb-4">
+            <svg class="w-10 h-10 mr-3 text-banfield-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <h3 class="text-2xl font-bold text-banfield-green">Nuestros Valores</h3>
+          </div>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-banfield-light-green mr-3 text-2xl font-bold">✓</span>
+              <span class="text-lg">Compromiso con la satisfacción del cliente</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-banfield-light-green mr-3 text-2xl font-bold">✓</span>
+              <span class="text-lg">Calidad garantizada en cada producto</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-banfield-light-green mr-3 text-2xl font-bold">✓</span>
+              <span class="text-lg">Transparencia y honestidad en nuestro servicio</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-banfield-light-green mr-3 text-2xl font-bold">✓</span>
+              <span class="text-lg">Innovación constante y mejora continua</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <div class="bg-banfield-gradient p-10 md:p-14 rounded-2xl shadow-2xl relative overflow-hidden">
+          <div class="relative z-10">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+              ¿Necesitás toners o servicio técnico?
+            </h3>
+            <p class="text-green-50 mb-8 text-lg md:text-xl">
+              Contactanos hoy y descubrí por qué somos la mejor opción en soluciones de impresión
+            </p>
+            <a href="https://wa.me/+541123290135" class="inline-block bg-white text-banfield-green hover:bg-yellow-300 font-bold px-10 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 text-lg">
+              Contactar Ahora →
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
-
-    <!-- CTA -->
-    <div class="text-center animate-on-scroll" data-animation="scaleIn">
-      <div class="bg-gradient-to-r bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl">
-        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
-          ¿Necesitás toners o servicio técnico?
-        </h3>
-        <p class="text-green-50 mb-6 text-lg">
-          Contactanos hoy y descubrí por qué somos la mejor opción en soluciones de impresión
-        </p>
-        <a href="#" class="inline-block  bg-green-600 hover:bg-green-700 font-bold px-8 py-3 rounded-lg text-white transition-colors duration-300 shadow-lg">
-          Contactar Ahora
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 <script>
   // Intersection Observer para activar animaciones al hacer scroll
