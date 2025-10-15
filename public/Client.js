@@ -2,7 +2,7 @@
 // Detecta automáticamente si estás en local o en producción
 const API_URL = window.location.hostname === 'localhost' 
   ? 'http://localhost:3000' 
-  : 'https://vercel.com/alexis-projects-8bfb0683/ecotape-web'; // ← Cambia por tu URL de Vercel
+  : 'https://ecotape-web.vercel.app/'; // ← Cambia por tu URL de Vercel
 
 fetch(`${API_URL}/api/productos`)
   .then(res => res.json())
