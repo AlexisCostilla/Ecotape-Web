@@ -1,18 +1,28 @@
-import pg from 'pg';
-const { Pool } = pg;
+import express from "express";
+import cors from "cors";
+import { pool } from "./ConnectionPost.js";
 
-export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_K74BAteuwJkh@ep-solitary-flower-acaeb78f-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require',
-  ssl: {
-    rejectUnauthorized: false
+const app = express();
+
+// habilitar CORS
+app.use(cors());
+// conecto con la base de datos y hago una consulta de prueba
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json({ ok: true, now: result.rows[0].now });
+  } catch (err) {
+    res.json({ ok: false, error: err.message });
   }
 });
 
-// Probar la conexión al iniciar
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error('❌ Error al conectar con Neon:', err.stack);
+app.get("/productos", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM tonners");
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
-  console.log('✅ Conectado exitosamente a Neon');
-  release();
 });
+
+app.listen(3000, () => console.log("Servidor corriendo en http://localhost:3000"));
