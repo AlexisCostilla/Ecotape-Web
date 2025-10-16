@@ -1,4 +1,4 @@
-import { pool } from '../ConnectionPost.js';  // ✅ CORRECTO (cambia de './ConnectionPost.js' a '../ConnectionPost.js')
+import { pool } from '../../ConnectionPost.js';  // ✅ CORRECTO (cambia de './ConnectionPost.js' a '../ConnectionPost.js')
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
