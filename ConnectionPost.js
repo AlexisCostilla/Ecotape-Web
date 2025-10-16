@@ -1,9 +1,8 @@
 import pg from "pg";
 
 export const pool = new pg.Pool({
-  host: "localhost",
-  port: 5432,
-  database: "BD_Ecotape",
-  user: "postgres",
-  password: "AlExIS.2004.S",
+  connectionString: process.env.DATABASE_URL || "postgresql://neondb_owner:npg_K74BAteuwJkh@ep-solitary-flower-acaeb78f-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
