@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { pool } from "./ConnectionPost.js";
+import { pool } from "../../../ConnectionPost.js";
 
 const app = express();
 
