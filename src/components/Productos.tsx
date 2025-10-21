@@ -18,7 +18,7 @@ export default function Productos({ productos: productosProp }: Props) {
 
   useEffect(() => {
     if (!productosProp) {
-      fetch("http://localhost:3000/productos")
+     fetch("https://ecotape-web.vercel.app/api/productos")
         .then((respuesta) => respuesta.json())
         .then((datos) => setProductos(datos))
         .catch((error) => console.error("hubo un problema", error));

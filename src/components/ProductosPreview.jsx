@@ -7,7 +7,7 @@ export default function ProductosPreview() {
 
   useEffect(() => {
     // Hago el fetch para obtener los productos
-    fetch("http://localhost:3000/productos")
+   fetch("https://ecotape-web.vercel.app/api/productos")
       .then((respuesta) => respuesta.json())
       .then((datos) => {
         // Tomo solo los primeros 5 productos para la vista previa
