@@ -1,18 +1,25 @@
-import { pool } from '../../ConnectionPost.js';  // ✅ CORRECTO
+import { pool } from '../../../ConnectionPost.js';
 
-export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
+export async function GET() {
   try {
     const result = await pool.query("SELECT NOW()");
-    res.status(200).json({ ok: true, now: result.rows[0].now });
+    return new Response(
+      JSON.stringify({ ok: true, now: result.rows[0].now }), 
+      {
+        status: 200,
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      }
+    );
   } catch (err) {
-    res.status(500).json({ ok: false, error: err.message });
+    return new Response(
+      JSON.stringify({ ok: false, error: err.message }), 
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
   }
 }
